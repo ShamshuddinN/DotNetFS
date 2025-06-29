@@ -1,0 +1,28 @@
+1. Setting-up MS-SQL Server in a docker container:
+>> sudo apt install gnome-terminal
+- https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository (Follow till step 3)
+
+- Verify Docker installation: 
+>> sudo docker run hello-world
+
+>> sudo groupadd docker
+>> sudo usermod -aG docker $USER
+- Logout and Login Again.
+
+>> docker pull mcr.microsoft.com/mssql/server:2022-latest
+
+docker run \
+    -e "ACCEPT_EULA=Y" \
+    -e "MSSQL_SA_PASSWORD=YourStrong@Password!" \
+    -p 1433:1433 \
+    --name sqlserver_dev \
+    -v sqlserver_data:/var/opt/mssql \
+    -d mcr.microsoft.com/mssql/server:2022-latest
+
+- SQL container will run. Verify:
+>> docker ps
+
+- Install Azure Data Studio: https://learn.microsoft.com/en-us/azure-data-studio/download-azure-data-studio?view=sql-server-ver16&tabs=win-install%2Cwin-user-install%2Credhat-install%2Cwindows-uninstall%2Credhat-uninstall
+(Prefer .deb package)
+
+- Connect and check SQL Server.
