@@ -3,8 +3,11 @@ dotnet ef dbcontext scaffold "Server=localhost,1433;Database=Sales;User ID=SA;Pa
 packages required:
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 dotnet add package Microsoft.Extensions.Configuration
-dotnet add package Microsoft.Extensions.Configuration.EnvironmentVariables
+dotnet add package Microsoft.EntityFrameworkCore.Design
 dotnet add package Microsoft.Extensions.Configuration.Json
+
+Optional:
+dotnet add package Microsoft.Extensions.Configuration.EnvironmentVariables
 
 scaffolding command pattern:
 dotnet ef dbcontext scaffold "Server=localhost,1433;Database=Sales;User ID=SA;Password=Random@#7435;Encrypt=False;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models
