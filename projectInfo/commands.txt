@@ -1,4 +1,10 @@
+Make sure Microsoft.EntityFrameworkCore.SqlServer and  Microsoft.EntityFrameworkCore.Design both packages are nstalled before running the command
+
 dotnet ef dbcontext scaffold "Server=localhost,1433;Database=Sales;User ID=SA;Password=Random@#7435;Encrypt=False;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models
+
+Troubleshooting for scaffolding errors:
+>> dotnet tool update --global dotnet-ef
+
 
 packages required:
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
